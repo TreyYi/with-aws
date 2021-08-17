@@ -290,7 +290,7 @@ mysql 프롬포트가 나왔다면 성공입니다.
 `root` User는 언제든 재사용될 수 있기 때문에 비밀번호를 재설정 합니다.
 
 ```mysql
-UPDATE mysql.user SET Password=PASSWORD('Bespin12!') WHERE User='root';
+UPDATE mysql.user SET Password=PASSWORD('test123!') WHERE User='root';
 ```
 
 에러 발생
@@ -308,7 +308,7 @@ set global validate_password_policy='LOW';
 LOW로 변경 후 다시 `root` User 비밀번호를 변경합니다. 비밀번호는 8자 이상으로만 세팅하면 됩니다.
 
 ```mysql
-alter user 'root'@'localhost' identified by 'Bespin12!';
+alter user 'root'@'localhost' identified by 'test123!';
 use mysql;
 SET GLOBAL explicit_defaults_for_timestamp = 1;
 flush privileges;
@@ -318,7 +318,7 @@ Airflow 계정 및 Database를 생성합니다.
 
 ```mysql
 # 계정 생성
-create user 'airflow'@'localhost' identified by 'Bespin12!';
+create user 'airflow'@'localhost' identified by 'test123!';
 
 # DB 권한 부여
 grant all privileges on *.* to 'airflow'@'localhost';
@@ -379,7 +379,7 @@ executor = CeleryExecutor
 
 # MySQL Connection 설정
 # sql_alchemy_conn = sqlite:////home/airflow/airflow/airflow.db
-sql_alchemy_conn =  mysql+pymysql://airflow:Bespin12!@127.0.0.1:3306/airflow
+sql_alchemy_conn =  mysql+pymysql://airflow:test123!@127.0.0.1:3306/airflow
 
 # 비밀번호 사용
 # auth_backend = airflow.api.auth.backend.deny_all
@@ -390,7 +390,7 @@ auth_backend = airflow.api.auth.backend.basic_auth
 broker_url = redis://localhost:6379/0
 
 # result_backend = db+mysql://airflow:airflow@localhost:3306/airflow
-result_backend = db+mysql://airflow:Bespin12!@127.0.0.1:3306/airflow
+result_backend = db+mysql://airflow:test123!@127.0.0.1:3306/airflow
 
 # catchup_by_default = True
 catchup_by_default = False
