@@ -407,7 +407,7 @@ Airflow Webserver에서 사용할 계정을 생성합니다.
 
 ```sh
 # user 생성
-airflow users create -r Admin  -u jungmin  -p Bespin12! -e candy7manner@gmail.com -f jungmin -l choi
+airflow users create -r Admin  -u trey  -p test123! -e ctrkwang1@gmail.com -f trey -l yi
 ```
 
 Setting이 완료되었습니다.
@@ -465,7 +465,7 @@ airflow celery worker
 2. Champion 확인용 계정 생성
 
    ```sh
-   airflow users create -r Admin  -u jungmin  -p Bespin12! -e candy7manner@gmail.com -f jungmin -l choi
+   airflow users create -r Admin  -u trey  -p test123! -e ctrkwang1@gmail.com -f trey -l yi
    ```
 
    
